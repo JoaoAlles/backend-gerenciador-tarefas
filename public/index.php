@@ -1,14 +1,18 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 require_once __DIR__ . '/../app/core/Autoload.php';
 require __DIR__ . '/../vendor/autoload.php';
-
 require_once __DIR__ . '/../app/core/Config.php';
 require_once __DIR__ . '/../app/core/Database.php';
 require_once __DIR__ . '/../app/core/Router.php';
 
+header("Access-Control-Allow-Origin: http://localhost:8080");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    exit(0);
+}
 $router = require __DIR__ . '/../app/routes/api.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
