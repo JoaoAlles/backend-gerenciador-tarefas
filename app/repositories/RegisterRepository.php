@@ -13,13 +13,6 @@ class RegisterRepository {
     }
 
     public function register(array $userData): ?User {
-        $stmt = $this->db->prepare("SELECT id FROM users WHERE email = :email");
-        $stmt->execute([':email' => $userData['email']]);
-
-        if ($stmt->fetch()) {
-            return null;
-        }
-
         $stmt = $this->db->prepare("
             INSERT INTO users (name, email, password) 
             VALUES (:name, :email, :password)

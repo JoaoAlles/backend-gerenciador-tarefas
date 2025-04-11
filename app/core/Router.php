@@ -3,7 +3,7 @@
 namespace core;
 class Router
 {
-    private $routes = [];
+    private array $routes = [];
 
     public function addRoute(string $method, string $path, string $controller, string $action): void
     {
