@@ -13,5 +13,6 @@ class UserController {
 
     public function index() {
         $users = $this->userRepository->findAll();
-        Response::json($users);    }
+        Response::json($users);
+    }
 }

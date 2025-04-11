@@ -24,4 +24,10 @@ class UserRepository {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
     }
+    public function findByEmail(string $email): ?array {
+        $stmt = $this->db->prepare("SELECT id, email, name, role, password FROM users WHERE email = :email");
+        $stmt->bindParam(':email', $email, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
+    }
 }
