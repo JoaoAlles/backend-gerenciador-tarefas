@@ -3,8 +3,8 @@
 namespace app\services\Impl;
 
 use app\repositories\UserRepository;
+use app\services\LoginServiceInterface;
 use Exception;
-use LoginServiceInterface;
 
 class LoginService implements LoginServiceInterface
 {
@@ -32,10 +32,14 @@ class LoginService implements LoginServiceInterface
 
         unset($user['password']);
 
+        $jwtService = new JwtService();
+        $token = $jwtService->createToken($user['id']);
+
         return [
             'status' => 'success',
             'message' => 'Login realizado com sucesso.',
             'user' => $user,
+            'token' => $token
         ];
     }
 
