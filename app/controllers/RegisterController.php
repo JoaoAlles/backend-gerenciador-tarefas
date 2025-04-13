@@ -4,7 +4,7 @@ namespace app\controllers;
 use app\core\Response;
 use app\repositories\RegisterRepository;
 use app\repositories\UserRepository;
-use app\services\RegisterService;
+use app\services\Impl\RegisterService;
 use Exception;
 
 class RegisterController {

@@ -1,12 +1,13 @@
 <?php
 
-namespace app\services;
+namespace app\services\Impl;
 
 use app\repositories\RegisterRepository;
 use app\repositories\UserRepository;
 use Exception;
+use RegisterInterface;
 
-class RegisterService
+class RegisterService implements RegisterInterface
 {
     private RegisterRepository $registerRepository;
     private UserRepository $userRepository;

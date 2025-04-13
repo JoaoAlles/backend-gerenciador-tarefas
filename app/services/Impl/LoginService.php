@@ -1,11 +1,12 @@
 <?php
 
-namespace app\services;
+namespace app\services\Impl;
 
 use app\repositories\UserRepository;
 use Exception;
+use LoginServiceInterface;
 
-class LoginService
+class LoginService implements LoginServiceInterface
 {
 
     private UserRepository $userRepository;
