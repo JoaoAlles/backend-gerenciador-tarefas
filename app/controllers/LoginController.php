@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\core\Response;
 use app\repositories\UserRepository;
-use app\services\Impl\LoginService;
+use App\services\Impl\LoginService;
 use Exception;
 
 class LoginController

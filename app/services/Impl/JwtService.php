@@ -1,6 +1,6 @@
 <?php
 
-namespace app\services\Impl;
+namespace App\services\Impl;
 
 use app\services\JwtServiceInterface;
 use Firebase\JWT\JWT;
@@ -15,6 +15,6 @@ class JwtService implements JwtServiceInterface {
             'id' => $userId
         ];
 
-        return JWT::encode($payload, '', 'HS256');
+        return JWT::encode($payload, $_ENV['JWT_SECRET'], 'HS256');
     }
 }

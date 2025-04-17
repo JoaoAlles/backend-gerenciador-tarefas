@@ -22,7 +22,10 @@ class Router
 
     public function dispatch(string $method, string $uri): void
     {
-        header('Content-Type: application/json');
+
+            header('Content-Type: application/json');
+        $uri = parse_url($uri, PHP_URL_PATH);
+        $uri = rtrim($uri, '/') ?: '/';
 
         if (isset($this->routes[$method][$uri])) {
             $route = $this->routes[$method][$uri];
@@ -31,16 +34,13 @@ class Router
             $middlewares = $route['middlewares'];
 
             foreach ($middlewares as $middleware) {
-                if (class_exists($middleware) && method_exists($middleware, 'validatorToken')) {
-                    try {
-                        $middleware::validatorToken();
-                    } catch (\Exception $e) {
-                        http_response_code($e->getCode() ?: 401);
-                        echo json_encode(['error' => $e->getMessage()]);
-                        return;
-                    }
+                if (class_exists($middleware) && method_exists($middleware, 'handle')) {
+                    call_user_func([$middleware, 'handle']);
+                } else {
+                    throw new \RuntimeException("Middleware {$middleware} inválido ou método 'handle' não encontrado.");
                 }
             }
+
 
             if (!class_exists($controllerClass)) {
                 throw new \RuntimeException("Controller {$controllerClass} não encontrado");
