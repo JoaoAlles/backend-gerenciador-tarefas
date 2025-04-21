@@ -1,8 +1,8 @@
 <?php
 
-namespace App\services\Impl;
+namespace App\Services\Impl;
 
-use app\services\JwtServiceInterface;
+use App\Services\JwtServiceInterface;
 use Firebase\JWT\JWT;
 
 class JwtService implements JwtServiceInterface {

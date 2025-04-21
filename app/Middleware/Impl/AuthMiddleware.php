@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Middleware\Impl;
 
-use app\core\Response;
+use app\Core\Response;
 use App\Middleware\MiddlewareInterface;
 use DateTimeImmutable;
 use Exception;

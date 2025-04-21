@@ -1,8 +1,8 @@
 <?php
-namespace app\repositories;
+namespace App\Repositories;
 
 use app\core\Database;
-use app\models\User;
+use app\Models\User;
 use PDO;
 
 class RegisterRepository {

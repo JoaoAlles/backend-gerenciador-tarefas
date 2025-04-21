@@ -1,9 +1,9 @@
 <?php
 
-namespace app\services\Impl;
+namespace App\Services\Impl;
 
 use app\repositories\UserRepository;
-use app\services\LoginServiceInterface;
+use App\Services\LoginServiceInterface;
 use Exception;
 
 class LoginService implements LoginServiceInterface

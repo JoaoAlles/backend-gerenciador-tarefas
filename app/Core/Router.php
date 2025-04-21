@@ -14,7 +14,7 @@ class Router
         }
 
         $this->routes[$method][$path] = [
-            'controller' => 'app\\controllers\\' . ltrim(str_replace('controllers\\', '', $controller), '\\'),
+            'controller' => 'app\\Controllers\\' . ltrim(str_replace('Controllers\\', '', $controller), '\\'),
             'action' => $action,
             'middlewares' => $middlewares
         ];

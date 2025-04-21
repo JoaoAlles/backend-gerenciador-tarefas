@@ -1,10 +1,10 @@
 <?php
-namespace app\controllers;
+namespace App\Controllers;
 
 use app\core\Response;
 use app\repositories\RegisterRepository;
 use app\repositories\UserRepository;
-use App\services\Impl\RegisterService;
+use App\Services\Impl\RegisterService;
 use Exception;
 
 class RegisterController {

@@ -1,12 +1,12 @@
 <?php
 
-namespace app\repositories;
+namespace App\Repositories;
 
 use app\core\Database;
 use PDO;
 
 class UserRepository {
-    private $db;
+    private PDO $db;
 
     public function __construct() {
         $this->db = Database::getInstance();

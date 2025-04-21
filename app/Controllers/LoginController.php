@@ -1,10 +1,10 @@
 <?php
 
-namespace app\controllers;
+namespace App\Controllers;
 
-use app\core\Response;
-use app\repositories\UserRepository;
-use App\services\Impl\LoginService;
+use App\Core\Response;
+use App\Repositories\UserRepository;
+use App\Services\Impl\LoginService;
 use Exception;
 
 class LoginController

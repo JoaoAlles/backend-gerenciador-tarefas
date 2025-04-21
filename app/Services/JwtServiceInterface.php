@@ -1,6 +1,6 @@
 <?php
 
-namespace app\services;
+namespace App\Services;
 
 interface JwtServiceInterface
 {
